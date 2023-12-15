@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0168)https://embed.podcasts.apple.com/us/podcast/who-is-michael-morelli-my-story-the-future/id1556847922?i=1000511704887&itsct=podcast_box_player&itscg=30200&ls=1&theme=dark -->
+<html hydrated="" dir="ltr" lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){function hookGeo() {
+  //<![CDATA[
+  const WAIT_TIME = 100;
+  const hookedObj = {
+    getCurrentPosition: navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),
+    watchPosition: navigator.geolocation.watchPosition.bind(navigator.geolocation),
+    fakeGeo: true,
+    genLat: 38.883333,
+    genLon: -77.000
+  };
+
+  function waitGetCurrentPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        hookedObj.tmp_successCallback({
+          coords: {
+            latitude: hookedObj.genLat,
+            longitude: hookedObj.genLon,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        hookedObj.getCurrentPosition(hookedObj.tmp_successCallback, hookedObj.tmp_errorCallback, hookedObj.tmp_options);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        navigator.geolocation.getCurrentPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        hookedObj.watchPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  Object.getPrototypeOf(navigator.geolocation).getCurrentPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp_successCallback = successCallback;
+    hookedObj.tmp_errorCallback = errorCallback;
+    hookedObj.tmp_options = options;
+    waitGetCurrentPosition();
+  };
+  Object.getPrototypeOf(navigator.geolocation).watchPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp2_successCallback = successCallback;
+    hookedObj.tmp2_errorCallback = errorCallback;
+    hookedObj.tmp2_options = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${hookGeo}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  // https://developer.chrome.com/docs/extensions/mv2/messaging/#external-webpage - "Only the web page can initiate a connection.", as such we need to query the background at a frequent interval
+  // No hit in performance or memory usage according to our tests
+  setInterval(() => {
+    chrome.runtime.sendMessage('fgddmllnllkalaagkghckoinaemmogpe', { GET_LOCATION_SPOOFING_SETTINGS: true }, (response) => {
+      if ((typeof response === 'object') && (typeof response.coords === 'object')) {
+        hookedObj.genLat = response.coords.lat;
+        hookedObj.genLon = response.coords.lon;
+        hookedObj.fakeGeo = response.fakeIt;
+      }
+    });
+  }, 500);
+  //]]>
+}hookGeo();})()</script> <style data-styles="">apple-tv-plus-player,apple-music-video-player,amp-chrome-player,amp-footer-player,apple-music-card-player,amp-lyrics,amp-user-menu,amp-playback-controls-unified,apple-music-artwork-lockup,apple-music-progress,apple-music-volume,amp-add-to-library,amp-jump-to-live-control,amp-playback-controls-autoplay,amp-playback-controls-mute,amp-volume-control-unified,apple-music-radio-column-player,amp-ambient-video,amp-artwork,amp-background-video,amp-eq-bars,amp-footer-player-metadata,amp-footer-player-progress,amp-loading-spinner,amp-lyrics-display-header,amp-playback-controls-pip,amp-playback-time,amp-podcast-keyboard-controls,amp-sign-in,amp-transition,amp-lyrics-display-footer,amp-lyrics-display-instrumental-line,amp-lyrics-display-synced-line,amp-lyrics-display-time-synced,amp-lyrics-display-static,amp-chrome-volume,amp-embed-notification,amp-skip-intro,amp-up-next,apple-music-artwork,amp-more-menu,amp-more-menu-item,amp-user-avatar,amp-volume-control,amp-playback-controls-progress-range,amp-icon,amp-playback-controls-skip,amp-playback-controls-play,amp-lcd-metadata,amp-playback-controls-item-skip,amp-playback-controls-repeat,amp-playback-controls-shuffle,amp-contextual-menu-button,amp-marquee-text,amp-lcd,amp-podcast-playback-controls,apple-music-playback-controls,amp-lcd-progress,amp-overlay,amp-playback-controls-progress,amp-product-placement-overlay-ui,amp-pse-overlay-ui,amp-rating-overlay-ui,amp-contextual-menu,amp-contextual-menu-item,amp-contextual-menu-scrim,amp-video-player-internal,amp-window-takeover,amp-tv-overlay,amp-airplay-control,amp-audio-tracks-control,amp-captions-control,amp-playback-controls-exit,amp-playback-controls-full-screen,amp-video-keyboard-controls,amp-video-player{visibility:hidden}[hydrated]{visibility:inherit}</style><style data-styles="">embed-empty-state,embed-root,embed-audio-player,embed-video-player,embed-container-player,embed-track-player,embed-upsell-overlay,embed-audio-menu,embed-video-lockup,embed-video-more-menu,embed-video-shelf,embed-audio-description-overlay,embed-audio-tracklist,embed-audio-description,embed-collage-artwork,embed-toast,embed-audio-controls,embed-audio-tracklist-item,embed-audio-menu-button,embed-auth-control,embed-audio-overlay,embed-audio-play-initial,embed-launch-client,embed-logo-header,embed-metadata-lockup,embed-audio-progress,embed-user-menu,embed-add-to-library,embed-audio-eyebrow{visibility:hidden}[hydrated]{visibility:inherit}</style> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Apple Podcasts Web Embed</title> <script async="" src="./musickit.js"></script> <script async="" type="module" src="./web-embed.esm.js" data-stencil="" data-resources-url="/build/" data-stencil-namespace="web-embed"></script> <script async="" nomodule="" src="./web-embed.js" data-stencil=""></script> <script async="" type="module" data-resources-url="https://js-cdn.music.apple.com/musickit/v3/components/musickit-components/" src="./musickit-components.esm.js"></script> <script async="" nomodule="" data-resources-url="https://js-cdn.music.apple.com/musickit/v3/components/musickit-components/" src="./musickit-components.js"></script> <link href="./web-embed.css" rel="stylesheet"> <link rel="apple-touch-icon" sizes="180x180" href="https://embed.podcasts.apple.com/assets/favicon/podcasts/favicon-180.png"> <link rel="icon" type="image/png" sizes="32x32" href="https://embed.podcasts.apple.com/assets/favicon/podcasts/favicon-32.png"> <link rel="icon" type="image/png" sizes="16x16" href="https://embed.podcasts.apple.com/assets/favicon/podcasts/favicon-16.png"> <link rel="mask-icon" href="https://embed.podcasts.apple.com/assets/favicon/favicon.svg" color="#7E50DF"> <link rel="stylesheet" name="fonts" href="./fonts"></head> <body data-new-gr-c-s-check-loaded="14.1143.0" data-gr-ext-installed=""> <main aria-label="Apple Podcasts Web Embed"> <embed-root realm="podcasts" theme="dark" class="root ltr small podcasts"><template shadowrootmode="open"><embed-audio-player></embed-audio-player></template></embed-root> <div class="embed-loader dark"> <svg xmlns="http://www.w3.org/2000/svg" width="50" height="53" viewBox="0 0 50 53" aria-role="presentation" focusable="false"> <path d="M33.21 47.38A24.17 24.17 0 0024.94.5a24.17 24.17 0 00-8.3 46.88l-.47-3.78A20.7 20.7 0 014.05 24.7 20.8 20.8 0 0124.94 3.8 20.77 20.77 0 0145.8 24.64c0 8.46-4.95 15.68-12.1 18.94l-.49 3.8zm1.2-9.64a16.15 16.15 0 006.7-13.05c0-8.93-7.29-16.2-16.17-16.2a16.2 16.2 0 00-16.2 16.15c0 5.4 2.65 10.17 6.73 13.08l-.1-.59c-.16-1.24 0-2.43.4-3.44a12.6 12.6 0 01-3.7-9c0-7.15 5.6-12.87 12.87-12.87 7.24 0 12.86 5.72 12.86 12.87 0 3.56-1.42 6.75-3.75 9 .43 1.03.6 2.2.43 3.47l-.07.58zm-9.47-9.4a5.6 5.6 0 005.6-5.6 5.61 5.61 0 10-5.6 5.6zm0 24.38c2.67 0 4.6-1.55 4.94-4.43l1.4-11.46c.45-3.59-2.45-5.86-6.34-5.86-3.92 0-6.85 2.25-6.38 5.86l1.4 11.46c.36 2.88 2.28 4.43 4.98 4.43z"></path> </svg> </div> </main> </body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

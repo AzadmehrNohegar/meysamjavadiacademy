@@ -1,0 +1,66 @@
+.elementor-1228 .elementor-element.elementor-element-d148001{padding:40px 0px 40px 0px;}.elementor-1228 .elementor-element.elementor-element-28da9a8 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute){margin-bottom:40px;}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-posts-container .elementor-post__thumbnail{padding-bottom:calc( 0.6 * 100% );}.elementor-1228 .elementor-element.elementor-element-8367b8f:after{content:"0.6";}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__thumbnail__link{width:100%;}.elementor-1228 .elementor-element.elementor-element-8367b8f{--grid-column-gap:30px;--grid-row-gap:35px;}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__text{padding:0px 25px 25px 25px;margin-bottom:10px;}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post{box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.15);background-color:#FFFFFF;}.elementor-1228 .elementor-element.elementor-element-8367b8f.elementor-posts--thumbnail-left .elementor-post__thumbnail__link{margin-right:20px;}.elementor-1228 .elementor-element.elementor-element-8367b8f.elementor-posts--thumbnail-right .elementor-post__thumbnail__link{margin-left:20px;}.elementor-1228 .elementor-element.elementor-element-8367b8f.elementor-posts--thumbnail-top .elementor-post__thumbnail__link{margin-bottom:20px;}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post:hover .elementor-post__thumbnail img{filter:brightness( 100% ) contrast( 125% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__title, .elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__title a{color:var( --e-global-color-primary );font-size:20px;font-weight:700;}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__title{margin-bottom:20px;}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__excerpt p{font-size:18px;}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__excerpt{margin-bottom:20px;}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__read-more{color:var( --e-global-color-secondary );font-size:16px;text-transform:uppercase;}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-posts-container .elementor-post__thumbnail{padding-bottom:calc( 0.7 * 100% );}.elementor-1228 .elementor-element.elementor-element-bb46a82:after{content:"0.7";}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__thumbnail__link{width:100%;}.elementor-1228 .elementor-element.elementor-element-bb46a82{--grid-column-gap:30px;--grid-row-gap:35px;}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__text{padding:0px 25px 25px 25px;margin-bottom:10px;}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post{box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.15);background-color:#FFFFFF;}.elementor-1228 .elementor-element.elementor-element-bb46a82.elementor-posts--thumbnail-left .elementor-post__thumbnail__link{margin-right:20px;}.elementor-1228 .elementor-element.elementor-element-bb46a82.elementor-posts--thumbnail-right .elementor-post__thumbnail__link{margin-left:20px;}.elementor-1228 .elementor-element.elementor-element-bb46a82.elementor-posts--thumbnail-top .elementor-post__thumbnail__link{margin-bottom:20px;}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post:hover .elementor-post__thumbnail img{filter:brightness( 100% ) contrast( 125% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__title, .elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__title a{color:var( --e-global-color-primary );font-size:20px;font-weight:700;}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__title{margin-bottom:20px;}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__excerpt p{font-size:18px;}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__excerpt{margin-bottom:20px;}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__read-more{color:var( --e-global-color-secondary );font-size:16px;text-transform:uppercase;}@media(max-width:767px){.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-posts-container .elementor-post__thumbnail{padding-bottom:calc( 0.5 * 100% );}.elementor-1228 .elementor-element.elementor-element-8367b8f:after{content:"0.5";}.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__thumbnail__link{width:100%;}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-posts-container .elementor-post__thumbnail{padding-bottom:calc( 0.5 * 100% );}.elementor-1228 .elementor-element.elementor-element-bb46a82:after{content:"0.5";}.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__thumbnail__link{width:100%;}}/* Start custom CSS for posts, class: .elementor-element-8367b8f */.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__read-more
+{
+        border: solid 2px #0132A9;
+        padding:15px 60px;
+        margin: 0 auto;
+        display: block;
+}
+
+.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-grid-item
+{
+    display: flex !important; 
+    flex-direction: column; 
+    
+}
+.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__text 
+{ 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+.elementor-1228 .elementor-element.elementor-element-8367b8f .elementor-post__read-more:hover
+{
+        background: #0132A9;
+        color:#fff;
+}
+
+@media only screen and (max-width: 600px) {
+     .elementor-post__read-more
+{
+        padding:12px 40px;
+}
+}/* End custom CSS */
+/* Start custom CSS for posts, class: .elementor-element-bb46a82 */.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__read-more
+{
+        border: solid 2px #0132A9;
+        padding:15px 60px;
+        margin: 0 auto;
+        display: block;
+}
+
+.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-grid-item
+{
+    display: flex !important; 
+    flex-direction: column; 
+    
+}
+.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__text 
+{ 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+.elementor-1228 .elementor-element.elementor-element-bb46a82 .elementor-post__read-more:hover
+{
+        background: #0132A9;
+        color:#fff;
+}
+
+@media only screen and (max-width: 600px) {
+     .elementor-post__read-more
+{
+        padding:12px 40px;
+}
+}/* End custom CSS */

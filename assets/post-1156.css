@@ -1,0 +1,57 @@
+.elementor-kit-1156{--e-global-color-primary:#000000;--e-global-color-secondary:#0132A9;--e-global-color-text:#000000;--e-global-color-accent:#0132A9;--e-global-color-d2de802:#FFFFFF;--e-global-color-3adea34:#1B1B1B;font-family:"Avenir", Sans-serif;font-size:18px;font-weight:400;}.elementor-kit-1156 a{color:var( --e-global-color-secondary );}.elementor-kit-1156 h1{font-family:"Avenir", Sans-serif;font-size:48px;font-weight:bold;}.elementor-kit-1156 h2{font-family:"Avenir", Sans-serif;font-size:36px;font-weight:700;}.elementor-kit-1156 h3{font-family:"Avenir", Sans-serif;font-size:28px;font-weight:600;}.elementor-kit-1156 h4{font-family:"Avenir", Sans-serif;font-size:24px;font-weight:600;}.elementor-kit-1156 h5{font-family:"Avenir", Sans-serif;font-size:20px;font-weight:600;}.elementor-kit-1156 h6{font-family:"Avenir", Sans-serif;font-size:18px;font-weight:600;}.elementor-kit-1156 button,.elementor-kit-1156 input[type="button"],.elementor-kit-1156 input[type="submit"],.elementor-kit-1156 .elementor-button{font-family:"Avenir", Sans-serif;font-size:20px;font-weight:500;color:var( --e-global-color-d2de802 );background-color:var( --e-global-color-accent );border-style:solid;border-width:3px 3px 3px 3px;border-color:var( --e-global-color-secondary );border-radius:0px 0px 0px 0px;padding:15px 60px 15px 60px;}.elementor-kit-1156 button:hover,.elementor-kit-1156 button:focus,.elementor-kit-1156 input[type="button"]:hover,.elementor-kit-1156 input[type="button"]:focus,.elementor-kit-1156 input[type="submit"]:hover,.elementor-kit-1156 input[type="submit"]:focus,.elementor-kit-1156 .elementor-button:hover,.elementor-kit-1156 .elementor-button:focus{color:var( --e-global-color-secondary );background-color:var( --e-global-color-d2de802 );border-style:solid;border-width:3px 3px 3px 3px;border-color:var( --e-global-color-secondary );border-radius:0px 0px 0px 0px;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-container{--container-max-width:1140px;}.elementor-widget:not(:last-child){margin-bottom:20px;}.elementor-element{--widgets-spacing:20px;}{}h1.entry-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-container{--container-max-width:1024px;}}@media(max-width:767px){.elementor-kit-1156{font-size:15px;}.elementor-kit-1156 h1{font-size:32px;}.elementor-kit-1156 h2{font-size:28px;}.elementor-kit-1156 h3{font-size:24px;}.elementor-kit-1156 h4{font-size:20px;}.elementor-kit-1156 h5{font-size:18px;}.elementor-kit-1156 h6{font-size:16px;}.elementor-kit-1156 button,.elementor-kit-1156 input[type="button"],.elementor-kit-1156 input[type="submit"],.elementor-kit-1156 .elementor-button{font-size:16px;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-container{--container-max-width:767px;}}/* Start Custom Fonts CSS */@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 300;
+	font-display: auto;
+	src: url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTStd-Book.woff2') format('woff2'),
+		url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTStd-Book.woff') format('woff');
+}
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTStd-Roman.woff2') format('woff2'),
+		url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTStd-Roman.woff') format('woff');
+}
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 700;
+	font-display: auto;
+	src: url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTStd-Black.woff2') format('woff2'),
+		url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTStd-Black.woff') format('woff');
+}
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 600;
+	font-display: auto;
+	src: url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTProHeavy.woff2') format('woff2'),
+		url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTProHeavy.woff') format('woff');
+}
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTProLight.woff2') format('woff2'),
+		url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTProLight.woff') format('woff');
+}
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 500;
+	font-display: auto;
+	src: url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTProMedium.woff2') format('woff2'),
+		url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTProMedium.woff') format('woff');
+}
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: bold;
+	font-display: auto;
+	src: url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTProBlack.woff2') format('woff2'),
+		url('https://michaelmorelli.com/wp-content/uploads/2021/11/AvenirLTProBlack.woff') format('woff');
+}
+/* End Custom Fonts CSS */
